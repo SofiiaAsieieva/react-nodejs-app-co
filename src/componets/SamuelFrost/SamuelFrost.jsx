@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { usersStatistics } from '../../api/users';
+import GraphChart from './components/GraphChart'
 
 export const SamuelFrost = ({ selectedUser }) => {
 		const [userStatistics, setUserStatistics] = useState([]);
@@ -7,14 +8,24 @@ export const SamuelFrost = ({ selectedUser }) => {
 		useEffect(() => {
 				usersStatistics(selectedUser)
 						.then(user => setUserStatistics(user));
+
+				console.log(userStatistics)
 		}, []);
-		
-		
-		console.log(userStatistics)
-		
+
 		return (
-			<div>
-					{selectedUser}
-			</div>
-	)
+				<>
+					<GraphChart />
+						
+						{userStatistics.length > 0 && (
+								<div>
+										{userStatistics.map(userStatistic => (
+												<div>
+														{ userStatistic.clicks }
+												</div>
+										))}
+								</div>
+						)}
+				</>
+		);
 }
+
