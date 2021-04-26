@@ -1,0 +1,21 @@
+@import "./../variable";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 $paddingPage;
+  color: #fff;
+
+  &__logo {
+
+  }
+
+  &__description {
+
+  }
+
+  &__copyrights {
+
+  }
+}

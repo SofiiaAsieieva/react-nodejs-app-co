@@ -1,0 +1,23 @@
+.section {}
+
+.section--header {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  height: 655px;
+
+  //background-image: url("../../images/headerBG.png");
+  //background-repeat: no-repeat;
+  //background-size: contain;
+}
+
+.section--body {
+  margin-bottom: 150px;
+}
+
+.section--footer {
+  padding-top: 35px;
+  background-image: url("../../images/footerBG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

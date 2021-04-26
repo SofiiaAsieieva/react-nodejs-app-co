@@ -1,0 +1,61 @@
+@import "./../variable";
+
+.body {
+  width: calc(100% - #{$paddingPage * 2});
+  height: 72px;
+  margin: 0;
+  padding: 0 $paddingPage;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__link--active {
+    margin-right: 5px;
+    &::after {
+      content: ">";
+      margin-left: 2px;
+    }
+  }
+
+  &__name {
+    text-align: start;
+    margin-top: 24px;
+  }
+
+  &__tablet {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  &__tablet-cell {
+    text-align: center;
+    cursor: pointer;
+
+    &:nth-child(odd) {
+      background-color: #F1F1F1;;
+    }
+  }
+
+  &__tablet-name {
+    padding: 14px 24px;
+    text-align: start;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    background-color: #3a80ba;
+  }
+
+  &__tablet-name--first {
+    border-top-left-radius: 8px;
+  }
+
+  &__tablet-name--last {
+    border-top-right-radius: 8px;
+  }
+
+  &__tablet-body {
+    padding: 0 24px;
+    text-align: start;
+  }
+}

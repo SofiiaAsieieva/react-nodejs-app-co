@@ -1,0 +1,10 @@
+@import "./../../utils/mixins";
+
+.container {
+  margin: 0 auto;
+  width: 100% - (2 * 20);
+
+  @include tablet {
+    width: 90%;
+  }
+}

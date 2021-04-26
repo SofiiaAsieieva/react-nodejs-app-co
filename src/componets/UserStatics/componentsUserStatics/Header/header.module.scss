@@ -1,0 +1,18 @@
+@import "./../variable";
+
+.header {
+  display: flex;
+  justify-content: start;
+  //width: calc(100% - #{$paddingPage * 2});
+  height: 72px;
+  background-color: #3a80ba;
+
+  &__logo {
+    line-height: 72px;
+    margin: 0;
+    padding: 0 $paddingPage;
+
+    font-weight: 400;
+    color: #fff;
+  }
+}

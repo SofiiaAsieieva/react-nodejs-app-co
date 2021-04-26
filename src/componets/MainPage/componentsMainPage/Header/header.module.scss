@@ -1,0 +1,79 @@
+@import "./../../../utils/mixins";
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  gap: 100px;
+  font-family: Montserrat, sans-serif;
+  color: #fff;
+
+  &__image-bg {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    object-position: bottom;
+    width: 100%;
+  }
+
+  &__text {
+    width: 590px;
+  }
+
+  &__logo {
+    margin: 0;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 49px;
+
+    @include desktop {
+      font-size: 36px;
+      line-height: 39px;
+    }
+  }
+
+  &__motto {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 59px;
+
+    @include desktop {
+      margin: 20px 0;
+      font-size: 40px;
+      line-height: 49px;
+    }
+  }
+
+  &__about {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 142%;
+  }
+
+  &__button {
+    margin-top: 50px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.44);
+    }
+
+    @include desktop {
+      margin-top: 30px;
+    }
+  }
+
+  &__button-lint {
+    display: block;
+    padding: 27px 75px;
+    text-decoration: none;
+    color: #3a80ba;
+  }
+
+  &__image-mobile {
+    margin-top: 40px;
+  }
+};
