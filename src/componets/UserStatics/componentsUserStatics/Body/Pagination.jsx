@@ -9,7 +9,7 @@ import { getAllUsers } from '../../../../api/users';
 export const PaginationBasic = ({ activePage, setActivePage, limit }) => {
 		let [pages, setPages] = useState(1);
 		const [totalCount, setTotalCount] = useState(0);
-		const totalPages = totalCount / limit;
+		// const totalPages = totalCount / limit;
 		
 		useEffect(() => {
 				getAllUsers()

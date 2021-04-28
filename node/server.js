@@ -40,7 +40,10 @@ app.get("/users/:id", (req, res, next) => {
 });
 
 app.get("/users", (req, res) => {
-		const sql = `SELECT * FROM users ORDER BY user_id limit ${req.query.limit} offset ${(req.query.page - 1) * req.query.limit}`;
+		const sql = `SELECT * FROM users
+				ORDER BY user_id
+				LIMIT ${req.query.limit} offset ${(req.query.page - 1) * req.query.limit}
+		`;
 		const params = [];
 		db.all(sql, params, (err, rows) => {
 				if (err) {
@@ -66,13 +69,13 @@ app.get("/usersStatistics", (req, res) => {
 		});
 });
 
-// e d limit
 app.get("/usersStatisticsAndUsers", (req, res) => {
-		const sql = `SELECT *, SUM(e.clicks) as all_clicks, SUM(e.page_views) as all_page_views
-				FROM users_statistic e JOIN users d
-				ON e.user_id = d.user_id
-				GROUP BY e.user_id
-				ORDER BY  cast(e.user_id as float) limit ${req.query.limit} offset ${(req.query.page - 1) * req.query.limit}; `;
+		const sql = `SELECT *, SUM(usersStatistics.clicks) as all_clicks, SUM(usersStatistics.page_views) as all_page_views
+				FROM users_statistic usersStatistics JOIN users users
+				ON usersStatistics.user_id = users.user_id
+				GROUP BY usersStatistics.user_id
+				ORDER BY  cast(usersStatistics.user_id as float) limit ${req.query.limit} offset ${(req.query.page - 1) * req.query.limit};
+		`;
 		const params = [];
 		db.all(sql, params, (err, rows) => {
 				if (err) {
